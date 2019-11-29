@@ -14,9 +14,10 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #eee;
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #aaa;
+  font-size: 0.75em;
 }
