@@ -4,7 +4,7 @@ import * as actions from './store/actions';
 
 import {Link} from "react-router-dom"; // useRouteMatch
 
-const areEqual = (prev: any, next: any) => {
+export const areEqual = (prev: any, next: any) => {
     console.log("areEqual: Mount");
     console.log("CMP = ", prev, next);
     if (prev === next) {
@@ -14,7 +14,7 @@ const areEqual = (prev: any, next: any) => {
     return false;
 };
 
-function Home(p: any) {
+export function Home(p: any) {
     const cnt = useSelector(((state: any) => state.app.cnt))
     const text = useSelector(((state: any) => state.app.text))
     useEffect(() => {
@@ -24,7 +24,7 @@ function Home(p: any) {
     return (<div style={{border: "1px solid red"}}><br />This is HOME (cnt: {cnt}, txt: {text})<br/>{p.children}</div>)
 };
 
-function Foo(props: any) {
+export function Foo(props: any) {
     // let { path, url } = useRouteMatch();
     useEffect(() => {
         console.log("Foo: Mount");
@@ -48,7 +48,7 @@ function Foo(props: any) {
     </div>)
 };
 
-function Mask() {
+export function Mask() {
     useEffect(() => {
         console.log("Mask: Mount");
         return () => console.log("Mask: UNMount");
@@ -57,7 +57,7 @@ function Mask() {
 };
 
 
-function Task() {
+export function Task() {
     const cnt = useSelector(((state: any) => state.app.cnt))
     const text = useSelector(((state: any) => state.app.text))
     const dispatcher = useDispatch();
@@ -90,7 +90,7 @@ function Task() {
 };
 
 
-function Bar() {
+export function Bar() {
     useEffect(() => {
         console.log("Bar: Mount");
         return () => console.log("Bar: UNMount");
@@ -99,7 +99,7 @@ function Bar() {
 };
 
 
-function Nav(props: any) {
+export function Nav(props: any) {
     useEffect(() => {
         console.log("Nav: Mount");
         return () => console.log("Nav: UNMount");
@@ -125,11 +125,12 @@ Task.whyDidYouRender = true;
 Mask.whyDidYouRender = true;
 Foo.whyDidYouRender = true;
 
-export default {
-    Home: React.memo(Home, areEqual),
-    Nav: React.memo(Nav),
-    Bar: React.memo(Bar),
-    Task: React.memo(Task),
-    Mask: React.memo(Mask),
-    Foo: React.memo(Foo),
-};
+
+// export default {
+//     Home: React.memo(Home, areEqual),
+//     Nav: React.memo(Nav),
+//     Bar: React.memo(Bar),
+//     Task: React.memo(Task),
+//     Mask: React.memo(Mask),
+//     Foo: React.memo(Foo),
+// };

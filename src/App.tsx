@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router } from 'react-router-dom'
 import './App.css';
-import C from './components';
+import {Nav} from './components';
 import theRoutes from './routes';
 // import Navi from './r'
 const App: React.FC = () => {
@@ -9,9 +9,9 @@ const App: React.FC = () => {
     <div className="App">
       <header className="App-header">
         <Router>
-            <C.Nav>
+            <Nav>
                 {theRoutes}
-            </C.Nav>
+            </Nav>
             {/*<Navi />*/}
         </Router>
 

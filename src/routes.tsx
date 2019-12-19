@@ -1,9 +1,12 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'; //  , Switch
-import C from './components';
+//import C from './components';
+import {Home, Bar, Foo, Task, Mask} from './components';
 
-const {Home, Bar, Foo, Task, Mask} = C;
+// const {Home, Bar, Foo, Task, Mask} = C;
+
+
 export default (
     <Switch>
         <Route path="/">
